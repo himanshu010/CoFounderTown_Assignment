@@ -1,0 +1,10 @@
+const proxy = require('http-proxy-middleware');
+module.exports = function (app) {
+	app.use(
+		proxy('/api/**', {
+			// https://github.com/chimurai/http-proxy-middleware
+			target: 'https://backend-279606.el.r.appspot.com',
+			secure: false,
+		})
+	);
+};
